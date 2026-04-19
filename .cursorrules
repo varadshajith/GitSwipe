@@ -1,0 +1,26 @@
+# GitSwipe Development Guidelines
+
+## Python Backend Standards
+
+- **Asynchronous Execution**: All I/O operations, database queries, and external API calls must utilize `async/await`. Blocking operations are prohibited in the application lifecycle.
+- **Strict Typing and Validation**: Data structures must be defined using Pydantic models. Raw dictionaries are not permitted for request/response payloads or core business logic.
+- **Architectural Isolation**: Direct communication with the GitHub API from HTTP router modules is strictly prohibited. All external API interactions must be encapsulated within background jobs or specialized service layers.
+- **Response Management**: Large Language Model (LLM) responses must be streamed to the client via `StreamingResponse` to optimize perceived latency.
+- **Configuration Management**: Model identifiers and environment-specific constants must be sourced from `app/config.py`. Hardcoded strings are not permitted.
+- **Agent Contextualization**: The Ranker agent prompt must always be initialized with the `PreferenceProfile` model.
+- **Fault Tolerance**: All external service calls must implement an exponential backoff retry strategy using the `tenacity` library.
+- **Data Isolation**: ChromaDB collections must be partitioned or managed at the user level where applicable to ensure strict data tenancy.
+
+## Flutter Frontend Standards
+
+- **State Architecture**: Prefer `StatelessWidget`. All state transitions and business logic must be managed via Riverpod (using `ConsumerWidget` or `HookConsumerWidget`).
+- **Reactive State Management**: Shared or persistent state must utilize `StateNotifier` or `AsyncNotifier`. Avoid the use of `setState`.
+- **Project Structure**: Adhere to the domain-driven feature folder architecture: `lib/features/{feature_name}/`.
+- **Design Token Integration**: Leverage the centralized `GitSwipeTheme` and `GlassCard` components. Ad-hoc styling or hardcoded HSL/HEX values are prohibited within the widget tree.
+- **User Feedback**: Implement standardized haptic feedback for all primary interactive components.
+
+## Version Control and Documentation
+
+- **Focus**: Maintain atomic commits focused on single functional improvements or fixes.
+- **Standardization**: Utilize standardized branch prefixes: `feature/`, `fix/`, `agent/`, or `design/`.
+- **Docstrings**: Comprehensive documentation is required for all agent definitions and complex service modules, detailing logic flow and tool integration.
