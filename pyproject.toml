@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git_swipe"
+version = "0.1.0"
+description = "Agentic GitHub discovery platform"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Varad Shajith", email = "varad@example.com"}]
+keywords = ["ai", "agentic", "github", "discovery", "langgraph"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "langgraph>=0.0.30",
+    "sqlalchemy>=2.0.0",
+    "alembic>=1.13.0",
+    "apscheduler>=3.10.4",
+    "pydantic>=2.6.0",
+    "chromadb>=0.5.0",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.0",
+    "ruff>=0.2.0",
+    "black>=24.2.0",
+    "mypy>=1.8.0",
+]
+
+[project.optional-dependencies]
+# Development dependencies
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "playwright>=1.40.0",
+]

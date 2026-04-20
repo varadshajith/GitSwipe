@@ -7,15 +7,15 @@
 ## 📦 Phase 0 — Project Bootstrap
 
 ### Environment & Tooling
-- [ ] Initialize Git repository and push to GitHub
-- [ ] Create Python virtual environment (`uv` or `venv`)
+- [x] Initialize Git repository and push to GitHub
+- [x] Create Python virtual environment (`uv` or `venv`)
 - [ ] Set up `pyproject.toml` with all backend dependencies (FastAPI, LangGraph, SQLAlchemy, APScheduler, Pydantic, ChromaDB, httpx, etc.)
-- [ ] Set up `.env` structure and `python-dotenv` loading
-- [ ] Configure `pre-commit` hooks (ruff, black, mypy)
+- [x] Set up `.env` structure and `python-dotenv` loading
+- [/ ] Configure `pre-commit` hooks (ruff, black, mypy)
 - [ ] Add `.gitignore` for Python, Node, `.env`, `__pycache__`, `chroma_db/`
 
 ### Frontend Scaffold
-- [ ] Scaffold frontend project (Next.js / Vite + TypeScript)
+- [x] Scaffold frontend project (Flutter) – created in ./mobile
 - [ ] Install Inter variable font via Google Fonts
 - [ ] Create base CSS design tokens matching `DESIGN_SYSTEM.md` (colors, radii, shadows, typography)
 - [ ] Implement glassmorphism utility classes / CSS variables
@@ -119,15 +119,15 @@
 ## 🎨 Phase 1F — Frontend MVP
 
 ### Feed View
-- [ ] Build `RepoCard` component:
-  - [ ] Glassmorphic card with `24px` border radius and multi-layer shadow
-  - [ ] Display: repo name, card summary, language chip, star count, topics
-  - [ ] Swipe gesture handling (touch + mouse drag)
-  - [ ] Save (✓) / Skip (✗) floating action buttons with `0.95` scale-on-press
-  - [ ] Haptic feedback trigger on action (mobile)
-- [ ] Build card stack / feed container with staggered entrance animation
-- [ ] Implement infinite scroll / auto-load next batch when feed < 3 cards
-- [ ] Connect feed to `GET /api/v1/feed` and `POST /api/v1/feed/action`
+- [x] Build `RepoCard` component:
+  - [x] Glassmorphic card with `24px` border radius and multi-layer shadow
+  - [x] Display: repo name, card summary, language chip, star count, topics
+  - [x] Swipe gesture handling (touch + mouse drag)
+  - [x] Save (✓) / Skip (✗) floating action buttons with `0.95` scale-on-press
+  - [x] Haptic feedback trigger on action (mobile)
+- [x] Build card stack / feed container with staggered entrance animation
+- [x] Implement infinite scroll / auto-load next batch when feed < 3 cards
+- [x] Connect feed to `GET /api/v1/feed` and `POST /api/v1/feed/action`
 
 ### Exploration / Deep-Dive View
 - [ ] Build `RepoDetailModal` or page with rendered Markdown deep-dive
